@@ -1,0 +1,268 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #f6f3eb;
+    padding: 15px 30px;
+    border-bottom: 2px solid #e6e0d3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 100px;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1B263B;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: #e6e0d3;
+    color: #8B5A2B;
+}
+
+nav a.logout {
+    background-color: #dc3545;
+    color: white;
+}
+
+nav a.logout:hover {
+    background-color: #c82333;
+    color: white;
+}
+
+main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #1B263B;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+form {
+    background: #f6f3eb;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #d4d0c7;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1B263B;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.form-group input.readonly {
+    background-color: #f3f4f6;
+    color: #6b7280;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #1B263B;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #2A3A55;
+}
+
+.btn-secondary {
+    background-color: #6B7280;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #4B5563;
+}
+
+.foto-preview {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.foto-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    border: 2px solid #e5e5e5;
+    object-fit: cover;
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #d4d0c7;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #D4AF37;
+}
+
+.form-group input[type="file"]:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+small {
+    color: #666;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+#author {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.3em;
+    color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header img {
+        height: 70px;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    main {
+        margin: 20px auto;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+    
+    form {
+        padding: 20px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+    }
+    
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.form-group input[type="file"] {
+    padding: 10px;
+    border: 2px dashed #d4d0c7;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #fff;
+    height: 50px;
+    line-height: 30px;
+}
+
+.form-group input[type="file"]:hover {
+    border-color: #D4AF37;
+}
+
+.form-group input[type="file"]:focus {
+    outline: none;
+    border-color: #D4AF37;
+}

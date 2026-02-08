@@ -1,0 +1,93 @@
+
+BEGIN
+   EXECUTE IMMEDIATE 'DROP TABLE COMPRES CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE PROVEIDOR CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE FORMACIO_PRODUCTE CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE PRODUCTE CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE COMPONENT CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE MUNICIPI CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE ITEM CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE PROVINCIA CASCADE CONSTRAINTS';
+   EXECUTE IMMEDIATE 'DROP TABLE UNITAT_MESURA CASCADE CONSTRAINTS';
+EXCEPTION
+   WHEN OTHERS THEN NULL;
+END;
+/
+
+
+CREATE TABLE UNITAT_MESURA(
+    codi_mesura varchar2(5) primary key,
+    nom_unitat varchar2(20) not null
+);
+
+CREATE TABLE PROVINCIA(
+    codi_prov varchar2(10) primary key,
+    nom varchar2(20) not null
+);
+
+CREATE TABLE ITEM (
+    codi_item VARCHAR2(10) PRIMARY KEY,
+    es_producte CHAR(1) NOT NULL CHECK (es_producte IN ('s','n')),
+    nom VARCHAR2(20) NOT NULL,
+    descripcio VARCHAR2(100),
+    stock NUMBER DEFAULT 0 NOT NULL,
+    foto BLOB NOT NULL
+);
+
+CREATE TABLE MUNICIPI(
+    codi_mun VARCHAR2(10),
+    codi_prov VARCHAR2(10) NOT NULL,
+    nom VARCHAR2(20) NOT NULL,
+    PRIMARY KEY (codi_mun),
+    FOREIGN KEY (codi_prov) REFERENCES PROVINCIA(codi_prov)
+);
+
+CREATE TABLE COMPONENT(
+    codi_com VARCHAR2(10) PRIMARY KEY,
+    codi_fabricant VARCHAR2(10) NOT NULL,
+    preu_mig NUMBER NOT NULL,
+    unitat_mesura VARCHAR2(5) NOT NULL,
+
+    FOREIGN KEY (unitat_mesura) REFERENCES UNITAT_MESURA(codi_mesura),
+    FOREIGN KEY (codi_com) REFERENCES ITEM(codi_item)
+);
+
+CREATE TABLE PRODUCTE(
+    codip varchar2(10) PRIMARY KEY,
+    FOREIGN KEY (codip) REFERENCES ITEM(codi_item)
+);
+
+CREATE TABLE FORMACIO_PRODUCTE(
+    codi_producte varchar2(10),
+    codi_item varchar2(10),
+    quantitat number not null,
+
+    PRIMARY KEY(codi_producte, codi_item),
+    FOREIGN KEY (codi_producte) REFERENCES PRODUCTE(codip),
+    FOREIGN KEY (codi_item) REFERENCES ITEM(codi_item),
+    CHECK (quantitat > 0),
+    CHECK (codi_producte <> codi_item)
+);
+
+CREATE TABLE PROVEIDOR (
+    codi VARCHAR2(10) PRIMARY KEY,
+    CIF VARCHAR2(20) UNIQUE NOT NULL,
+    rao_social VARCHAR2(100) NOT NULL,
+    linia_adreca_facturacio VARCHAR2(200) NOT NULL,
+    persona_contacte VARCHAR2(50),
+    telf_contacte VARCHAR2(20),    
+    municipi VARCHAR2(10) NOT NULL,
+
+    FOREIGN KEY (municipi) REFERENCES MUNICIPI(codi_mun)
+);
+
+CREATE TABLE COMPRES (
+    codi_comp VARCHAR2(10) NOT NULL,
+    codi_prov VARCHAR2(10) NOT NULL,
+    preu NUMBER NOT NULL,
+
+    PRIMARY KEY (codi_comp, codi_prov),
+    FOREIGN KEY (codi_comp) REFERENCES COMPONENT(codi_com),
+    FOREIGN KEY (codi_prov) REFERENCES PROVEIDOR(codi),
+    CHECK (preu > 0)
+);

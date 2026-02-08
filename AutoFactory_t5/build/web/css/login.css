@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+main {
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    background-color: #f6f3eb;
+    border: 1px solid #d4d0c7;
+}
+.logo-container {
+    margin-bottom: 20px;
+}
+.logo-container img {
+    width: 180px;
+    max-width: 100%;
+    height: auto;
+}
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    color: #1B263B;
+    margin-bottom: 25px;
+}
+.error-message {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
+}
+form {
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1B263B;
+    font-size: 14px;
+}
+.form-group label .material-icons {
+    font-size: 18px;
+    color: #D4AF37;
+}
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+    background-color: #ffffff;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+.btn-login {
+    width: 100%;
+    padding: 14px 20px;
+    background-color: #1B263B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+.btn-login:hover {
+    background-color: #2A3A55;
+}
+.info-box {
+    margin-top: 25px;
+    padding: 15px;
+    background-color:#EEF6FF;
+    border: 1px solid #d4d0c7;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #1B263B;
+}
+.info-box p {
+    margin: 5px 0;
+}
+#author {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.3em;
+    color: #4a4a4a;
+    margin: 0;
+}
+@media (max-width: 480px) {
+    main {
+        padding: 25px 20px;
+    }
+    
+    .logo-container img {
+        width: 140px;
+    }
+    
+    h2 {
+        font-size: 24px;
+    }
+}

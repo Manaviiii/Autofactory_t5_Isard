@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #f6f3eb;
+    padding: 15px 30px;
+    border-bottom: 2px solid #e6e0d3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 100px;
+    cursor: pointer;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1B263B;
+    font-weight: 600;
+}
+
+.user-info a {
+    color: #dc3545;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.user-info a:hover {
+    color: #c82333;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #1B263B;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.welcome {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.menu-card {
+    background: #f6f3eb;
+    padding: 30px 25px;
+    border-radius: 12px;
+    border: 1px solid #d4d0c7;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.menu-card .material-icons {
+    font-size: 48px;
+    color: #D4AF37;
+    margin-bottom: 15px;
+}
+
+.menu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #1B263B;
+    margin-bottom: 10px;
+}
+
+.menu-card p {
+    color: #666;
+    font-size: 14px;
+}
+
+#author {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.3em;
+    color: #4a4a4a;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header img {
+        height: 70px;
+    }
+    
+    h1 {
+        font-size: 28px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
