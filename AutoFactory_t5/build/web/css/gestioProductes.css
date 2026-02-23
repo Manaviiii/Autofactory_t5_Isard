@@ -79,7 +79,7 @@ main {
     gap: 10px;
 }
 
-.btn-primary, .btn-danger, .btn-secondary, .btn-filter {
+.btn-primary, .btn-danger, .btn-secondary, .btn-filter, .btn-report {
     padding: 10px 18px;
     border: none;
     border-radius: 6px;
@@ -117,6 +117,15 @@ main {
 .btn-filter {
     background-color: #1B263B;
     color: white;
+}
+
+.btn-report {
+    background-color: #059669;
+    color: white;
+}
+
+.btn-report:hover {
+    background-color: #047857;
 }
 
 .btn-clear {
@@ -264,53 +273,6 @@ tbody tr:hover {
     display: none;
 }
 
-#author {
-    position: fixed;
-    bottom: 15px;
-    left: 15px;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 1.3em;
-    color: #4a4a4a;
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    header img {
-        height: 70px;
-    }
-    
-    nav {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    nav a {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-    
-    .page-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .page-header h1 {
-        font-size: 26px;
-    }
-    
-    .filters form {
-        flex-direction: column;
-    }
-    
-    .filters input[type="text"] {
-        width: 100%;
-    }
-}
-
 .pagination {
     margin-top: 20px;
     display: flex;
@@ -362,7 +324,56 @@ tbody tr:hover {
     font-size: 20px;
 }
 
+#author {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 1.3em;
+    color: #4a4a4a;
+}
+
 @media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    header img {
+        height: 70px;
+    }
+    
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    nav a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+    
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .page-header h1 {
+        font-size: 26px;
+    }
+    
+    .actions {
+        flex-wrap: wrap;
+    }
+    
+    .filters form {
+        flex-direction: column;
+    }
+    
+    .filters input[type="text"] {
+        width: 100%;
+    }
+    
     .pagination {
         flex-direction: column;
         align-items: center;

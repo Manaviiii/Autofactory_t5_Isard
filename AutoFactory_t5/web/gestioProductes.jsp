@@ -48,6 +48,9 @@
             <button class="btn-danger" onclick="activarEliminar()">
                 <span class="material-icons">delete</span> Eliminar
             </button>
+            <button onclick="window.open('http://localhost:8080/jasperserver/rest_v2/reports/Reports/Blank_A4.pdf', '_blank')" class="btn-report">
+                <span class="material-icons">picture_as_pdf</span> Informe PDF
+            </button>
         </div>
     </section>
 
