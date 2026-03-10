@@ -3,8 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_FINAL_XEPDB1/Autofactory_T5_VictorVillagra-main/AutoFactory_t5/src/java/LoginServlet.java</file>
-            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_FINAL_XEPDB1/Autofactory_T5_VictorVillagra-main/AutoFactory_t5/src/java/util/BCryptUtil.java</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/src/java/CompresServlet.java</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/src/java/util/BCryptUtil.java</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/css/gestioProductes.css</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/css/formComponent.css</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/css/formProveidor.css</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/gestioProductes.jsp</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/formComponent.jsp</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/css/gestioProveidors.css</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/preusComponent.jsp</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/src/java/ComponentServlet.java</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/gestioProveidors.jsp</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/src/java/ProveidorServlet.java</file>
+            <file>file:/C:/Users/isard/Desktop/Autofactory_T5_VictorVillagra/AutoFactory_t5/web/formProveidor.jsp</file>
         </group>
     </open-files>
 </project-private>

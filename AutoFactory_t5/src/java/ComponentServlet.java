@@ -13,6 +13,7 @@ import jakarta.servlet.http.Part;
 
 import p1.t4.daooracle.DAOComponent;
 import p1.t4.daooracle.DAOMesura;
+import p1.t4.daooracle.DAOCompres;
 import p1t4model.Component;
 import p1t4model.UnitatMesura;
 
@@ -22,12 +23,14 @@ public class ComponentServlet extends HttpServlet {
 
     private DAOComponent daoComponent;
     private DAOMesura daoMesura;
+    private DAOCompres daoCompres;
     private static final int ITEMS_PER_PAGE = 5;
 
     @Override
     public void init() throws ServletException {
         daoComponent = new DAOComponent();
         daoMesura = new DAOMesura();
+        daoCompres = new DAOCompres();
     }
 
     @Override
@@ -159,6 +162,10 @@ public class ComponentServlet extends HttpServlet {
             if (component != null) {
                 request.setAttribute("component", component);
                 request.setAttribute("modeEdicio", true);
+                
+                // Afegir preus per proveïdor
+                request.setAttribute("preus", daoCompres.obtenirPreusComponent(codi));
+                request.setAttribute("proveidorsDisponibles", daoCompres.obtenirProveidorsDisponibles(codi));
             }
         }
         

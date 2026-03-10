@@ -22,7 +22,6 @@ header {
 
 header img {
     height: 100px;
-    cursor: pointer;
 }
 
 nav {
@@ -55,8 +54,8 @@ nav a.logout:hover {
 }
 
 main {
-    max-width: 600px;
-    margin: 40px auto;
+    max-width: 800px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
@@ -64,15 +63,43 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     color: #1B263B;
-    margin-bottom: 30px;
-    text-align: center;
+    margin-bottom: 25px;
 }
 
-form {
+/* Alertes */
+.alert {
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    border: 1px solid #10b981;
+    color: #065f46;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    border: 1px solid #ef4444;
+    color: #b91c1c;
+}
+
+/* Contenidor principal - TOT DINS */
+.form-container {
     background: #f6f3eb;
     padding: 30px;
-    border-radius: 12px;
+    border-radius: 10px;
     border: 1px solid #d4d0c7;
+}
+
+#componentForm {
+    background: none;
+    padding: 0;
+    border: none;
 }
 
 .form-group {
@@ -87,52 +114,82 @@ form {
 }
 
 .form-group input,
-.form-group textarea,
-.form-group select {
+.form-group select,
+.form-group textarea {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #e5e5e5;
     border-radius: 8px;
     font-size: 15px;
-    transition: border-color 0.3s;
+    font-family: 'Open Sans', sans-serif;
     background-color: #fff;
+    transition: border-color 0.3s;
 }
 
 .form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
+.form-group select:focus,
+.form-group textarea:focus {
     outline: none;
     border-color: #D4AF37;
 }
 
 .form-group input.readonly {
-    background-color: #f3f4f6;
-    color: #6b7280;
+    background-color: #e9e9e9;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.form-group input.preu-mig {
+    font-weight: bold;
+    color: #D4AF37;
+    font-size: 18px;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 5px;
+    color: #888;
+    font-size: 12px;
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.foto-preview {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.foto-preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 8px;
+    border: 2px solid #d4d0c7;
+    object-fit: cover;
 }
 
 .form-actions {
     display: flex;
     gap: 15px;
-    margin-top: 30px;
-    justify-content: center;
+    margin-top: 25px;
 }
 
 .btn-primary, .btn-secondary {
     padding: 12px 25px;
     border: none;
     border-radius: 8px;
-    font-size: 15px;
-    font-weight: 600;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
     transition: background-color 0.3s;
 }
 
@@ -154,42 +211,207 @@ form {
     background-color: #4B5563;
 }
 
-.foto-preview {
-    margin: 10px 0;
-    text-align: center;
+/* Separador dins del contenidor */
+.section-divider {
+    border: none;
+    border-top: 2px dashed #d4d0c7;
+    margin: 35px 0;
 }
 
-.foto-preview img {
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 8px;
-    border: 2px solid #e5e5e5;
-    object-fit: cover;
+/* Secció de Preus - DINS DEL CONTENIDOR */
+.preus-section {
+    background: none;
+    padding: 0;
+    border: none;
+    border-radius: 0;
 }
 
-.form-group input[type="file"] {
-    padding: 10px;
-    border: 2px dashed #d4d0c7;
-    border-radius: 8px;
+.preus-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: #1B263B;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.preus-section h2 .material-icons {
+    color: #D4AF37;
+}
+
+.section-info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.preus-table {
     width: 100%;
-    cursor: pointer;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.preus-table th {
+    background-color: #1B263B;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.preus-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.preus-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-preu {
+    width: 100px;
+    padding: 8px 10px;
+    border: 2px solid #e5e5e5;
+    border-radius: 6px;
+    text-align: right;
+    font-size: 14px;
     background-color: #fff;
 }
 
-.form-group input[type="file"]:hover {
-    border-color: #D4AF37;
-}
-
-.form-group input[type="file"]:focus {
+.input-preu:focus {
     outline: none;
     border-color: #D4AF37;
 }
 
-small {
+.euro {
+    font-weight: 600;
     color: #666;
-    font-size: 12px;
-    display: block;
-    margin-top: 5px;
+}
+
+.btn-icon {
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.btn-icon .material-icons {
+    font-size: 18px;
+}
+
+.btn-save {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #059669;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.no-preus {
+    color: #666;
+    padding: 20px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.no-preus .material-icons {
+    color: #3b82f6;
+}
+
+/* Afegir preu */
+.afegir-preu {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #d4d0c7;
+}
+
+.afegir-preu h3 {
+    font-size: 16px;
+    color: #1B263B;
+    margin-bottom: 15px;
+}
+
+.form-afegir-preu {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.form-afegir-preu .form-group {
+    flex: 1;
+    min-width: 180px;
+    margin-bottom: 0;
+}
+
+.form-afegir-preu .form-group label {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.form-afegir-preu select,
+.form-afegir-preu input[type="number"] {
+    padding: 10px 15px;
+    border: 2px solid #e5e5e5;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #fff;
+}
+
+.form-afegir-preu select:focus,
+.form-afegir-preu input:focus {
+    outline: none;
+    border-color: #D4AF37;
+}
+
+.btn-add {
+    padding: 10px 20px;
+    background-color: #10b981;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+    height: 44px;
+}
+
+.btn-add:hover {
+    background-color: #059669;
 }
 
 #author {
@@ -221,48 +443,35 @@ small {
         font-size: 14px;
     }
     
-    main {
-        margin: 20px auto;
-    }
-    
     h1 {
         font-size: 26px;
     }
     
-    form {
-        padding: 20px;
-    }
-    
     .form-row {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 0;
     }
     
     .form-actions {
         flex-direction: column;
     }
     
-    .form-actions button {
+    .btn-primary, .btn-secondary {
         width: 100%;
         justify-content: center;
     }
-}
-
-.form-group input[type="file"] {
-    padding: 10px;
-    border: 2px dashed #d4d0c7;
-    border-radius: 8px;
-    width: 100%;
-    cursor: pointer;
-    background-color: #fff;
-    height: 50px;
-    line-height: 30px;
-}
-
-.form-group input[type="file"]:hover {
-    border-color: #D4AF37;
-}
-
-.form-group input[type="file"]:focus {
-    outline: none;
-    border-color: #D4AF37;
+    
+    .form-afegir-preu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .form-afegir-preu .form-group {
+        min-width: 100%;
+    }
+    
+    .btn-add {
+        width: 100%;
+        justify-content: center;
+    }
 }
