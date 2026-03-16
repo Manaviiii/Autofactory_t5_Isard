@@ -12,7 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 public class ImageServlet extends HttpServlet {
 
     private Connection getConnection() throws Exception {
-        return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "SYSTEM", "12345");
+        return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/XEPDB1", "alumne", "alumne");
     }
 
     @Override

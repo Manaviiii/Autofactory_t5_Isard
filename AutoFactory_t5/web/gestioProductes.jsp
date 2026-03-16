@@ -33,6 +33,7 @@
     <nav>
         <a href="menu.jsp">Home</a>
         <a href="ComponentServlet">Components</a>
+        <a href="ProveidorServlet">Proveïdors</a>
         <a href="ArbreServlet">Vista Arbre</a>
         <a href="LogoutServlet" class="logout">Logout</a>
     </nav>
@@ -47,9 +48,6 @@
             </button>
             <button class="btn-danger" onclick="activarEliminar()">
                 <span class="material-icons">delete</span> Eliminar
-            </button>
-            <button onclick="window.open('http://localhost:8080/jasperserver/rest_v2/reports/Reports/Blank_A4.pdf', '_blank')" class="btn-report">
-                <span class="material-icons">picture_as_pdf</span> Informe PDF
             </button>
         </div>
     </section>
@@ -97,6 +95,7 @@
                         <td class="accions">
                             <span class="material-icons edit" onclick="location.href='ProductServlet?action=edit&id=<%= p.getCodi() %>'" title="Editar">edit</span>
                             <span class="material-icons bom" onclick="location.href='BomServlet?producte=<%= p.getCodi() %>'" title="Composició">account_tree</span>
+                            <span class="material-icons pdf" onclick="obrirInformeBOM('<%= p.getCodi() %>')" title="Informe BOM PDF">picture_as_pdf</span>
                         </td>
                     </tr>
                     <% } } else { %>
@@ -154,16 +153,28 @@ function activarEliminar() {
     document.getElementById('confirmDeleteBtn').style.display = 'inline-flex';
     document.getElementById('cancelDeleteBtn').style.display = 'inline-flex';
 }
+
 function cancelarEliminar() {
     document.querySelectorAll('.deleteCheck').forEach(ch => { ch.checked = false; ch.style.display = 'none'; });
     document.getElementById('confirmDeleteBtn').style.display = 'none';
     document.getElementById('cancelDeleteBtn').style.display = 'none';
 }
+
 document.getElementById('deleteForm').addEventListener('submit', function(e) {
     const checked = document.querySelectorAll('.deleteCheck:checked');
     if (checked.length === 0) { e.preventDefault(); alert('Selecciona almenys un producte'); }
     else if (!confirm('Eliminar ' + checked.length + ' producte/s?')) { e.preventDefault(); }
 });
+
+function obrirInformeBOM(codiProducte) {
+    var url = 'visorPDF.jsp?codiProducte=' + codiProducte;
+    var width = 900;
+    var height = 700;
+    var left = (screen.width - width) / 2;
+    var top = (screen.height - height) / 2;
+    
+    window.open(url, 'InformeBOM', 'width=' + width + ',height=' + height + ',left=' + left + ',top=' + top + ',resizable=yes,scrollbars=yes');
+}
 </script>
 </body>
 </html>

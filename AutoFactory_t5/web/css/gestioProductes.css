@@ -333,6 +333,24 @@ tbody tr:hover {
     color: #4a4a4a;
 }
 
+.accions .pdf {
+    color: #dc2626;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.accions .pdf:hover {
+    color: #b91c1c;
+}
+.accions .pdf {
+    color: #dc2626;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.accions .pdf:hover {
+    color: #b91c1c;
+}
 @media (max-width: 768px) {
     header {
         flex-direction: column;
